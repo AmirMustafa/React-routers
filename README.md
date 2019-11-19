@@ -3,7 +3,7 @@
 For this we have uses react package 'react-router-dom'
 
 # Prerquisites
-You should have created 3 to 4 components like <home />, <about />, <contact />
+You should have created 3 to 4 components like home, about, contact
 
 ## Installation
 1. After basic react app installation create home, about and contact component and write in APP.js
@@ -71,10 +71,6 @@ const Menu = () => {
 export default Menu;
 
 ```
-## Screenshots
-
-![Screenshot](https://user-images.githubusercontent.com/15896579/69008213-0a2d1280-096e-11ea-913f-961f2caf8812.png?raw=true "Screenshot of Passport jwt auth")
-
 ## Video
 
 For understanding
