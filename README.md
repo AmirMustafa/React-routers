@@ -1,68 +1,81 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React JS Routing
 
-## Available Scripts
+For this we have uses react package 'react-router-dom'
 
-In the project directory, you can run:
+# Prerquisites
+You should have created 3 to 4 components like <home />, <about />, <contact />
 
-### `npm start`
+## Installation
+1. After basic react app installation create home, about and contact component and write in APP.js
+2. npm install 'react-router-dom'
+3. In App.js
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Menu from "./components/Menu";
+import About from "./components/About";
+import Home from "./components/Home";
+import Contact from "./components/Contact";
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+import { BrowserRouter, Route, Switch } from "react-router-dom";  // Added this react router library
 
-### `npm test`
+function App() {
+  return (
+    <BrowserRouter>             // must be written
+      <div>
+        <Menu />
+        <Switch>                // Switch - AFter getting proper route break
+          <Route path="/" exact component={Home} />   // For getting component from url URI
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+        </Switch>
+        {/* <Home />
+      <About />
+      <Contact /> */}
+      </div>
+    </BrowserRouter>
+  );
+}
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+export default App;
 
-### `npm run build`
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. To access it  Link:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+import React from "react";
+import "./Menu.css";
+import { Link } from "react-router-dom";    // we use link package
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+const Menu = () => {
+  return (
+    <div className="Menustyle">
+      <ul>
+        <li>
+          <Link to="/">Home</Link>          // Link to access - works witout refresh
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+      </ul>
+    </div>
+  );
+};
 
-### `npm run eject`
+export default Menu;
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+## Screenshots
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Screenshot](https://user-images.githubusercontent.com/15896579/69008213-0a2d1280-096e-11ea-913f-961f2caf8812.png?raw=true "Screenshot of Passport jwt auth")
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Video
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+For understanding
+https://www.loom.com/share/d0a64e0fb7a5407082be4e5a7957729f
